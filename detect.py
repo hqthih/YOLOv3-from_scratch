@@ -13,6 +13,7 @@ from darknet import Darknet
 import pickle as pkl
 import pandas as pd
 import random
+from torchsummary import summary
         
 def arg_parse():
     """
@@ -78,6 +79,7 @@ print("Network successfully loaded")
       
   
 model.net_info["height"] = args.reso    #Load lại tham số height của input đầu vào. mặc định 416 (nếu ko gọi --reso)
+print(model)
 
 #check lại input dimension xem đã đạt một số yêu cầu (chưa biết yêu cầu dùng làm gì)
 inp_dim = int(model.net_info["height"]) #
